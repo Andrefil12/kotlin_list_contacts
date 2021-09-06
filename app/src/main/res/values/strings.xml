@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ContactsList</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buscar_contato">Buscar Contato</string>
+    <string name="botao_add">Botão Add</string>
+    <string name="salvar">Salvar</string>
+    <string name="telepone">Telepone</string>
+    <string name="nome">Nome</string>
+    <string name="foto_avatar">Foto avatar</string>
+    <string name="contato">Contato</string>
+    <string name="telefone">Telefone</string>
+    <string name="editar">Editar</string>
+    <string name="chamar">Chamar</string>
 </resources>
