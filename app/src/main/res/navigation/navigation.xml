@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentContacts">
+
+    <fragment
+        android:id="@+id/fragmentContacts"
+        android:name="com.project.contactslist.screens.contacts.ContactsFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_contacts">
+
+        <action
+            android:id="@+id/action_fragmentContacts_to_fragmentInsert"
+            app:destination="@id/fragmentInsert"
+            app:popUpTo="@id/fragmentContacts"
+            app:popUpToInclusive="false"/>
+
+        <action
+            android:id="@+id/action_fragmentContacts_to_fragmentShow"
+            app:destination="@id/fragmentShow"
+            app:popUpTo="@id/fragmentContacts"
+            app:popUpToInclusive="false"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentInsert"
+        android:name="com.project.contactslist.screens.insert.InsertFragment"
+        android:label="@string/inserir"
+        tools:layout="@layout/fragment_insert">
+
+        <action
+            android:id="@+id/action_fragmentInsert_to_fragmentContacts"
+            app:destination="@id/fragmentContacts"
+            app:popUpTo="@id/fragmentContacts"
+            app:popUpToInclusive="false"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentEdit"
+        android:name="com.project.contactslist.screens.edit.EditFragment"
+        android:label="@string/editar"
+        tools:layout="@layout/fragment_edit">
+
+        <action
+            android:id="@+id/action_fragmentEdit_to_fragmentShow"
+            app:destination="@id/fragmentShow"
+            app:popUpTo="@id/fragmentShow"
+            app:popUpToInclusive="false"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentShow"
+        android:name="com.project.contactslist.screens.show.ShowFragment"
+        android:label="@string/contato"
+        tools:layout="@layout/fragment_show">
+
+        <action
+            android:id="@+id/action_fragmentShow_to_fragmentEdit"
+            app:destination="@id/fragmentEdit"
+            app:popUpTo="@id/fragmentContacts"
+            app:popUpToInclusive="false"/>
+    </fragment>
+
+</navigation>
