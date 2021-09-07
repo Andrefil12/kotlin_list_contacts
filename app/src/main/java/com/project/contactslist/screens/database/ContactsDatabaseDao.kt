@@ -7,17 +7,20 @@ import androidx.room.*
 interface ContactsDatabaseDao {
 
     @Insert
-    fun insert(contact: Contacts)
+    suspend fun insert(contact: Contacts)
 
     @Update
-    fun update(contact: Contacts)
+    suspend fun update(contact: Contacts)
 
     @Delete
-    fun delete(key: Long)
+    suspend fun delete(key: Long)
 
     @Query("SELECT * FROM my_contacts ORDER BY name_contact")
     fun getAllContacts() : LiveData<List<Contacts>>
 
     @Query("SELECT * FROM my_contacts WHERE contactId = :key")
-    fun searchContact(key: Long) : Contacts
+    suspend fun getContact(key: Long) : Contacts
+
+    @Query("SELECT * FROM my_contacts WHERE name_contact = :name")
+    suspend fun searchContact(name: String) : Contacts?
 }
