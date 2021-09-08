@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.project.contactslist.R
 import com.project.contactslist.databinding.FragmentContactsBinding
 import com.project.contactslist.screens.database.Contacts
@@ -30,6 +31,7 @@ class ContactsFragment : Fragment() {
         val viewModel = ViewModelProvider(this, viewModelFactory).get(ContactsViewModel::class.java)
         val adapter = ContactsAdapter(ContactsListener {
             idContact -> Toast.makeText(context, "$idContact", Toast.LENGTH_LONG).show()
+            viewModel.onInsertKey(idContact)
         })
         binding.recycler.adapter = adapter
         viewModel.allContacts.observe(viewLifecycleOwner, Observer {
@@ -40,6 +42,12 @@ class ContactsFragment : Fragment() {
         binding.addContact.setOnClickListener {
             it.findNavController().navigate(ContactsFragmentDirections.actionFragmentContactsToFragmentInsert())
         }
+        viewModel.key.observe(viewLifecycleOwner, Observer { newKey ->
+            newKey?.let {
+                this.findNavController().navigate(ContactsFragmentDirections.actionFragmentContactsToFragmentShow(it))
+                viewModel.onResetKey()
+            }
+        })
         return binding.root
     }
 

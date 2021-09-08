@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardElevation="20dp"
+        app:cardElevation="10dp"
         app:cardCornerRadius="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -41,19 +41,21 @@
                 app:myContacts="@{itemContact}"
                 app:layout_constraintStart_toEndOf="@id/iv_avatar"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ib_call"/>
 
             <ImageButton
                 android:id="@+id/ib_call"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/botao_de_chamada"
+                android:layout_marginStart="50dp"
                 android:background="@color/white"
-                android:layout_marginStart="90dp"
                 app:srcCompat="@android:drawable/sym_action_call"
                 app:layout_constraintStart_toEndOf="@id/tv_name_contact"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ib_delete"/>
 
             <ImageButton
                 android:id="@+id/ib_delete"
@@ -64,6 +66,7 @@
                 android:layout_marginEnd="20dp"
                 app:srcCompat="@android:drawable/ic_delete"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ib_call"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 

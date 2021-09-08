@@ -33,8 +33,8 @@
         <action
             android:id="@+id/action_fragmentInsert_to_fragmentContacts"
             app:destination="@id/fragmentContacts"
-            app:popUpTo="@id/fragmentContacts"
-            app:popUpToInclusive="false"/>
+            app:popUpTo="@id/fragmentInsert"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -46,8 +46,12 @@
         <action
             android:id="@+id/action_fragmentEdit_to_fragmentShow"
             app:destination="@id/fragmentShow"
-            app:popUpTo="@id/fragmentShow"
-            app:popUpToInclusive="false"/>
+            app:popUpTo="@id/fragmentEdit"
+            app:popUpToInclusive="true"/>
+
+        <argument
+            android:name="editContact"
+            app:argType="long"/>
     </fragment>
 
     <fragment
@@ -59,8 +63,11 @@
         <action
             android:id="@+id/action_fragmentShow_to_fragmentEdit"
             app:destination="@id/fragmentEdit"
-            app:popUpTo="@id/fragmentContacts"
-            app:popUpToInclusive="false"/>
+            app:popUpTo="@id/fragmentShow"
+            app:popUpToInclusive="true"/>
+        <argument
+            android:name="keyContact"
+            app:argType="long"/>
     </fragment>
 
 </navigation>

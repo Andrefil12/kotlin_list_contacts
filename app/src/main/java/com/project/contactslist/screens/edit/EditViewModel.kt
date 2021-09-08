@@ -36,4 +36,20 @@ class EditViewModel(
             database.getContact(id)
         }
     }
+
+    fun onUpdate(nameEdit: String, phoneEdit: String) {
+        viewModelScope.launch {
+            _contact.value?.nameContact = nameEdit
+            _contact.value?.phoneContact = phoneEdit
+            update(_contact.value)
+        }
+    }
+
+    private suspend fun update(contact: Contacts?){
+        contact?.let {
+            database.update(it)
+        }
+    }
+
+
 }

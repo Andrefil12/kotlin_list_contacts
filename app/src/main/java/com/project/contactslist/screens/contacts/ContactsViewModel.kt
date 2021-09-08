@@ -1,5 +1,6 @@
 package com.project.contactslist.screens.contacts
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,6 +13,9 @@ class ContactsViewModel(
 ) : ViewModel(){
 
     private val searchContact = MutableLiveData<String>()
+    private val _key = MutableLiveData<Long>()
+    val key: LiveData<Long>
+        get() = _key
     val allContacts = database.getAllContacts()
 
     fun onSearch(nameContact: String){
@@ -28,5 +32,13 @@ class ContactsViewModel(
 
     private suspend fun onSearchContact(name: String){
         val nameContact = database.searchContact(name)
+    }
+
+    fun onInsertKey(id: Long){
+        _key.value = id
+    }
+
+    fun onResetKey(){
+        _key.value = null
     }
 }
