@@ -12,7 +12,7 @@ class ContactsViewModel(
 ) : ViewModel(){
 
     private val searchContact = MutableLiveData<String>()
-    private val allContacts = database.getAllContacts()
+    val allContacts = database.getAllContacts()
 
     fun onSearch(nameContact: String){
         searchContact.value = nameContact

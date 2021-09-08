@@ -12,8 +12,8 @@ interface ContactsDatabaseDao {
     @Update
     suspend fun update(contact: Contacts)
 
-    @Delete
-    suspend fun delete(key: Long)
+//    @Delete
+//    suspend fun delete(key: Long)
 
     @Query("SELECT * FROM my_contacts ORDER BY name_contact")
     fun getAllContacts() : LiveData<List<Contacts>>

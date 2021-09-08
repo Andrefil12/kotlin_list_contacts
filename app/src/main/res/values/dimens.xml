@@ -7,4 +7,6 @@
     <dimen name="dimen_exp">150dp</dimen>
     <dimen name="subtitle_text">24sp</dimen>
     <dimen name="title_text">32sp</dimen>
+    <dimen name="avatar_dimen_recycler">120dp</dimen>
+    <dimen name="text_contact">32sp</dimen>
 </resources>

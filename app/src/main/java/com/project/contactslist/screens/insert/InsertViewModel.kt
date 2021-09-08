@@ -14,7 +14,7 @@ class InsertViewModel(
         viewModelScope.launch {
             val newContact = Contacts()
             newContact.nameContact = name
-            newContact.nameContact = phone
+            newContact.phoneContact = phone
             insert(newContact)
         }
     }

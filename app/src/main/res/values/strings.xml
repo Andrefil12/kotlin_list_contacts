@@ -5,7 +5,6 @@
     <string name="buscar_contato">Buscar Contato</string>
     <string name="botao_add">Botão Add</string>
     <string name="salvar">Salvar</string>
-    <string name="telepone">Telepone</string>
     <string name="nome">Nome</string>
     <string name="foto_avatar">Foto avatar</string>
     <string name="contato">Contato</string>
@@ -13,4 +12,6 @@
     <string name="editar">Editar</string>
     <string name="chamar">Chamar</string>
     <string name="inserir">Inserir</string>
+    <string name="botao_de_chamada">Botão de chamada</string>
+    <string name="botao_de_exclusao">Botão de exclusão</string>
 </resources>
